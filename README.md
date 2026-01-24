@@ -1,5 +1,4 @@
 # TIL-Today-I-learnt
-# Today I Learned (TIL)
 
 > "A day without learning is a day wasted."
 
