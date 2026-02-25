@@ -13,3 +13,11 @@ The Circuit Breaker acts as a middleman with three states:
 
 ### 💡 Why it matters
 It improves **Resiliency**. Instead of a user seeing a "Loading..." spinner for 30 seconds before a crash, they get an immediate "Service temporarily unavailable" message, and the rest of your app stays functional.
+
+```mermaid
+stateDiagram-v2
+    [*] --> Closed
+    Closed --> Open : Failure Threshold Exceeded
+    Open --> HalfOpen : Wait Time Expired
+    HalfOpen --> Closed : Success
+    HalfOpen --> Open : Failure
