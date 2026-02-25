@@ -36,3 +36,15 @@ $$\text{In the presence of a Partition (P), you must choose either C or A.}$$
 
 ### Why it matters
 When designing a system like a **Banking App**, you choose **CP** (you cannot show a wrong balance). When designing a **Social Media Feed**, you choose **AP** (it’s okay if a post takes 2 seconds to appear for everyone, as long as the site doesn't crash).
+
+```mermaid
+graph TD
+    C((Consistency)) --- A((Availability))
+    A --- P((Partition Tolerance))
+    P --- C
+    
+    subgraph "Pick Two"
+    CA[RDBMS / SQL] -.-> C & A
+    AP[Cassandra / Dynamo] -.-> A & P
+    CP[MongoDB / Redis] -.-> C & P
+    end
