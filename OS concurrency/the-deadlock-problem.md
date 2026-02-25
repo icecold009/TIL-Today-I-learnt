@@ -32,3 +32,10 @@ Both threads will wait forever. Neither can move, and neither will release what 
 
 ### 🧬 Mathematical Representation
 A deadlock can be modeled using a **Directed Graph** $G = (V, E)$. If the graph contains a cycle and each resource has only one instance, a deadlock exists.
+
+```mermaid
+graph TD
+    T1((Thread 1)) -- Requests --> R2[Resource B]
+    R2 -- Held by --> T2((Thread 2))
+    T2 -- Requests --> R1[Resource A]
+    R1 -- Held by --> T1
