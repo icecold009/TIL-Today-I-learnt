@@ -18,11 +18,19 @@ We define Big O by looking at the **growth rate**. If an algorithm has a process
 
 $$T(n) \approx O(n^2)$$
 
-
-
 ### 🛠 Why It Matters in Practice
 Imagine you are searching for a name in a phonebook of 1,000,000 people:
 * **Linear Search ($O(n)$):** You check every page. In the worst case, you make **1,000,000** comparisons.
 * **Binary Search ($O(\log n)$):** You split the book in half each time. You find the name in roughly **20** comparisons.
 
 The difference isn't just a few seconds; it's the difference between a functional app and a crashed server.
+
+```mermaid
+graph LR
+    O1[O1 - Constant] --- On[On - Linear]
+    On --- OlogN[OlogN - Logarithmic]
+    OlogN --- On2[On2 - Quadratic]
+    On2 --- O2n[O2n - Exponential]
+    
+    style O1 fill:#f9f,stroke:#333,stroke-width:2px
+    style O2n fill:#f66,stroke:#333,stroke-width:4px
