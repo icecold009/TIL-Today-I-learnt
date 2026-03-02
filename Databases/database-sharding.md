@@ -26,3 +26,9 @@ A hash function is applied to the Shard Key to distribute data evenly.
 * **Pro:** Excellent data distribution.
 * **Con:** Adding a new shard requires moving almost all your data ("Re-sharding").
 
+```mermaid
+graph TD
+    Data["New User (ID: 42)"] --> Hash{"Hash(42) % 3"}
+    Hash -- Result: 0 --> S0[(Shard 0)]
+    Hash -- Result: 1 --> S1[(Shard 1)]
+    Hash -- Result: 2 --> S2[(Shard 2)]
