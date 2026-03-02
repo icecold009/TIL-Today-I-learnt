@@ -24,3 +24,14 @@ Imagine a circle with a range of values, say from $0$ to $2^{32}-1$.
 ### 🧬 The Problem of "Skew" (Virtual Nodes)
 If you only have two servers, one might end up with 90% of the ring by chance. To fix this, we use **Virtual Nodes**. We hash each server multiple times (e.g., `Server_A_1`, `Server_A_2`) so it appears in many places on the ring, ensuring an even distribution of data.
 
+```mermaid
+graph TD
+    subgraph Hash_Ring
+    direction BT
+    S1["Server 1 (Pos: 10)"] --- K1["Key A (Pos: 25)"]
+    K1 --- S2["Server 2 (Pos: 50)"]
+    S2 --- K2["Key B (Pos: 75)"]
+    K2 --- S1
+    end
+    
+    note["Key A moves clockwise to Server 2"]
