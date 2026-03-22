@@ -71,17 +71,18 @@ The key insight: **the user is in control**. They can revoke access anytime with
 | Authorization Server | The service that issues tokens (e.g. Google) |
 | Client ID / Secret | Your app's identity with the auth server |
 
----
-
-## Side-by-Side Flow
-
-**API Key flow:**
+**API Key Flow** 
+```mermaid
+flowchart LR
+    A[Your App] -->|API key in header| B[API Server]
+    B -->|validates key| C[✅ Response]
 ```
-App → API Key in header → API Server → Response
-```
-
-**OAuth flow:**
-```
-User → Consent Screen → Auth Server → Access Token
-App → Access Token in header → API Server → Response
+ 
+**OAuth Flow**
+```mermaid
+flowchart LR
+    U[User] -->|login with X| AS[Auth Server]
+    AS -->|access token| A[Your App]
+    A -->|token in header| B[API Server]
+    B -->|✅ Response| R[ ]
 ```
