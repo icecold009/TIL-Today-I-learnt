@@ -67,3 +67,9 @@ Error messages reveal table and column names — hide them from users.
 > **Key Takeaway** — Never trust user input. Parameterised queries are the single most effective defence against SQL injection.
 
 ---
+
+
+### References
+
+- [OWASP SQL Injection](https://owasp.org/www-community/attacks/SQL_Injection)
+- [PortSwigger SQL Injection Labs](https://portswigger.net/web-security/sql-injection)
