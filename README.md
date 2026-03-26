@@ -6,9 +6,9 @@ A collection of small snippets, tips, and concepts I've picked up during my codi
 
 ---
 
-**![TILs](https://img.shields.io/badge/TILs-39-blueviolet?style=for-the-badge)
-![Maintained](https://img.shields.io/badge/Maintained%3F-daily-green?style=for-the-badge)
-![Learning](https://img.shields.io/badge/Learning-System%20Design-orange?style=for-the-badge)**
+**![TILs](https://img.shields.io/badge/TILs-39-blue?style=for-the-badge)
+![Maintained](https://img.shields.io/badge/Maintained%3F-daily-red?style=for-the-badge)
+![Learning](https://img.shields.io/badge/Learning-System%20Design-yellow?style=for-the-badge)**
 
 ## 📚 Categories
 
