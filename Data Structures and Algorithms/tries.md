@@ -23,6 +23,6 @@ graph TD
     A --> P[P*]
     A --> R[R*]
 
-    style T* fill:#ccffcc,stroke:#333
-    style P* fill:#ccffcc,stroke:#333
-    style R* fill:#ccffcc,stroke:#333
+    style T* stroke:#333
+    style P* stroke:#333
+    style R* stroke:#333
