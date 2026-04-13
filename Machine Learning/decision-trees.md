@@ -33,3 +33,14 @@ def calculate_entropy(y):
 # Example: A dataset with 4 'Yes' and 2 'No'
 data = ['Yes', 'Yes', 'Yes', 'Yes', 'No', 'No']
 print(f"Current Entropy: {calculate_entropy(data):.4f}")
+```
+
+```mermaid
+flowchart TD
+    Start([Start]) --> Scale[Standardize Data<br/>Mean = 0, Variance = 1]
+    Scale --> Cov[Compute Covariance Matrix]
+    Cov --> Eigen[Calculate Eigenvectors & Eigenvalues]
+    Eigen --> Sort[Sort Eigenvectors by Eigenvalues<br/>High to Low]
+    Sort --> Select[Select top k Eigenvectors<br/>to form a projection matrix]
+    Select --> Project[Transform original data into<br/>new k-dimensional space]
+    Project --> End([End])
