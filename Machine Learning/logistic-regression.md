@@ -15,3 +15,17 @@ Where $z = \beta_0 + \beta_1x_1 + ... + \beta_nx_n$.
 This snippet demonstrates how to train a classifier and view the predicted probabilities.
 
 ```python
+from sklearn.linear_model import LogisticRegression
+import numpy as np
+
+# 1. Sample Data (Hours Studied vs. Pass/Fail)
+X = np.array([[0.5], [1.75], [2.25], [3.25], [4.5], [5.25]])
+y = np.array([0, 0, 0, 1, 1, 1])
+
+# 2. Fit the model
+clf = LogisticRegression()
+clf.fit(X, y)
+
+# 3. Predict probability for 3 hours of study
+prob = clf.predict_proba([[3.0]])
+print(f"Probability of Passing: {prob[0][1]:.2%}")
