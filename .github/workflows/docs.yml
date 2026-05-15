@@ -1,0 +1,31 @@
+name: Docs
+
+on:
+  push:
+    paths:
+      - "**/*.md"
+      - "scripts/**"
+      - ".github/workflows/docs.yml"
+  pull_request:
+    paths:
+      - "**/*.md"
+      - "scripts/**"
+      - ".github/workflows/docs.yml"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check README generation
+        run: python scripts/update-readme.py --check
+
+      - name: Check markdown links
+        run: python scripts/check-links.py
